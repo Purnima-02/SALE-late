@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+   .inside-card {
+    position: relative;
+    transition: transform 0.3s ease-in-out;  
+}
+
+.inside-card:hover {
+    transform: translateY(-3px); 
+    cursor: pointer;
+}
+
+
+    
+</style>
+
+
+<body>
+<div class="row">
+    <h1 style="margin-left: 300px; margin-top: 10px; font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold;">
+        <span style="color: white; text-shadow: -1px 0 orange, 1px 0 orange, 0 -1px orange, 0 1px orange;">LOANS</span> 
+        <span style="color: white; text-shadow: -1px 0 blue, 1px 0 blue, 0 -1px blue, 0 1px blue;">APPLIED</span>
+        <span style="color: white; text-shadow: -1px 0 green, 1px 0 green, 0 -1px green, 0 1px green;">COUNT</span>
+    </h1>
+<div class="col-12 mt-3"> <!--Colum12-->
+
+    <div class="card shadow"><!--Main Card-->
+
+
+
+        <div class="card-body row gy-2"><!--Card-Body-->
+
+
+
+           <!--Starts 1st card-->
+           <div class="col-md-4 col-12"><!--Inside Col-4-->
+            <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px; padding: 20px;"><!-- Custom card style -->
+        
+                <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #378ae8 0%, #378ae8 100%);">
+                    <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">Total Applications</p>
+                    <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{totalApplications}}</p>
+                </div>
+
+            </div><!--Inside Sub MAinCard-->
+
+            </div><!--Inside Col-4-->
+
+
+            
+           <!--Starts 1st card-->
+
+           
+           <!--Starts 2nd card-->
+         
+           <div class="col-md-4 col-12"><!--Inside Col-4-->
+            <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px; padding: 20px;"><!-- Custom card style -->
+        
+                <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #6a11cb 0%, #6a11cb 100%);">
+                    <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">Business Loan Applications</p>
+                    <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{businessLength}}</p>
+                </div>
+
+            </div><!--Inside Sub MAinCard-->
+
+            </div><!--Inside Col-4-->
+         
+
+            <!--Starts 2nd card-->
+
+
+
+            <!--Starts 3rd card-->
+            <div class="col-md-4 col-12"><!--Inside Col-4-->
+                <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px; padding: 20px;"><!-- Custom card style -->
+            
+                    <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #be2791 0%, #be2791 100%);">
+                        <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">Personal Loan Applications</p>
+                        <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{personalLength}}</p>
+                    </div>
+    
+                </div><!--Inside Sub MAinCard-->
+    
+                </div><!--Inside Col-4-->
+         
+            <!--Starts 3rd card-->
+
+
+         
+                <div class="col-md-4 col-12"><!--Inside Col-4-->
+                    <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px; padding: 20px;"><!-- Custom card style -->
+                
+                        <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #a6d81d 0%, #a6d81d 100%);">
+                            <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">Education Loan Applications</p>
+                            <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{EducationLength}}</p>
+                        </div>
+        
+                    </div><!--Inside Sub MAinCard-->
+        
+                    </div><!--Inside Col-4-->          
+       
+
+            <!--Starts 4rth card-->
+
+            <div class="col-md-4 col-12"><!--Inside Col-4-->
+                <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px; padding: 20px;"><!-- Custom card style -->
+            
+                    <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #fc2549 0%, #fc2549 100%);">
+                        <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">LAP Applications</p>
+                        <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{lapLength}}</p>
+                    </div>
+    
+                </div><!--Inside Sub MAinCard-->
+    
+                </div><!--Inside Col-4-->   
+           
+      <!--Starts 5rth card-->
+
+      <div class="col-md-4 col-12"><!--Inside Col-4-->
+        <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px; padding: 20px;"><!-- Custom card style -->
+    
+            <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #515150 0%, #515150 100%);">
+                <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">Home Loan Applications</p>
+                <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{homeLength}}</p>
+            </div>
+
+        </div><!--Inside Sub MAinCard-->
+    </div><!--Inside Col-5-->  
+
+    <!--Starts 5rth card-->
+
+ <div class="col-md-4 col-12"><!--Inside Col-4-->
+    <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px; padding: 20px;"><!-- Custom card style -->
+
+        <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #0decce 0%, #0decce 100%);">
+            <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">Car Loan Applications</p>
+            <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{carLength}}</p>
+        </div>
+
+    </div><!--Inside Sub MAinCard-->
+
+    </div><!--Inside Col-5-->  
+
+    <div class="col-md-4 col-12"><!--Inside Col-4-->
+        <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px;padding: 20px;"><!-- Custom card style -->
+    
+            <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg,gold 0%, gold 100%);">
+                <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">Gold Loan Applications</p>
+                <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{goldLength}}</p>
+            </div>
+    
+        </div><!--Inside Sub MAinCard-->
+    
+        </div><!--Inside Col-5-->  
+    
+        <div class="col-md-4 col-12"><!--Inside Col-4-->
+            <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px;padding: 20px;"><!-- Custom card style -->
+        
+                <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg,black 0%, black 100%);">
+                    <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">Other Loan Applications</p>
+                    <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{otherLength}}</p>
+                </div>
+        
+            </div><!--Inside Sub MAinCard-->
+        
+            </div><!--Inside Col-5-->
+
+ <!--Starts 6rth card-->
+
+ <div class="row">
+    <h1 style="margin-left: 300px; margin-top: 30px; font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold;">
+        <span style="color: white; text-shadow: -1px 0 orange, 1px 0 orange, 0 -1px orange, 0 1px orange;">CREDIT</span> 
+        <span style="color: white; text-shadow: -1px 0 blue, 1px 0 blue, 0 -1px blue, 0 1px blue;">APPLIED</span>
+        <span style="color: white; text-shadow: -1px 0 green, 1px 0 green, 0 -1px green, 0 1px green;">COUNT</span>
+    </h1>
+<div class="col-12 mt-3"> <!--Colum12-->
+
+    <div class="card shadow"><!--Main Card-->
+
+
+
+        <div class="card-body row gy-2"><!--Card-Body-->
+
+
+ <div class="col-md-12 col-12"><!--Inside Col-4-->
+    <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px;margin-left: 0px; padding: 20px;"><!-- Custom card style -->
+
+        <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #35766d 0%, #35766d 100%);">
+            <p class="title fw-bold" style="font-size: 1.0rem; color: red;">Credit card Applications</p>
+            <p class="fw-bold" style="font-size: 1.5rem; color: #110202;">{{creditCard}}</p>
+        </div>
+
+    </div><!--Inside Sub MAinCard-->
+
+    </div><!--Inside Col-5-->  
+
+
+
+
+
+
+
+
+        </div><!--Card-Body-->
+
+    </div><!--Main Card-->
+
+</div> <!--Colum12-->
+
+</div>
+
+<div class="row mt-5">
+    <h1 style="margin-left: 300px; margin-top: 10px; font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold;">
+        <span style="color: white; text-shadow: -1px 0 orange, 1px 0 orange, 0 -1px orange, 0 1px orange;">INSURANCE</span> 
+        <span style="color: white; text-shadow: -1px 0 blue, 1px 0 blue, 0 -1px blue, 0 1px blue;">APPLIED</span>
+        <span style="color: white; text-shadow: -1px 0 green, 1px 0 green, 0 -1px green, 0 1px green;">COUNT</span>
+    </h1>
+   <div class="row">
+    <div class="col-12"> 
+    <div class="card shadow">
+
+        <div class="card-body row gy-2">
+   <!--Starts 1st card-->
+   <div class="col-md-4 col-12"><!--Inside Col-4-->
+    <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px; padding: 20px;"><!-- Custom card style -->
+
+        <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #378ae8 0%, #19d4f9 100%);">
+            <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">Total Insurances</p>
+            <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{Insurances.totalInsurance}}</p>
+        </div>
+
+    </div><!--Inside Sub MAinCard-->
+
+    </div><!--Inside Col-4-->
+ 
+       <!--Starts 3rd card-->
+       <div class="col-md-4 col-12"><!--Inside Col-4-->
+        <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px; padding: 20px;"><!-- Custom card style -->
+    
+            <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #be2791 0%, #f0073e 100%);">
+                <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">All Insurances</p>
+                <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{Insurances.allInsurance}}</p>
+            </div>
+
+        </div><!--Inside Sub MAinCard-->
+
+        </div><!--Inside Col-4-->
+
+           
+
+
+            <!-- 3rd -->
+             
+ <div class="col-md-4 col-12"><!--Inside Col-4-->
+    <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px;  padding: 20px;"><!-- Custom card style -->
+
+        <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #35766d 0%, #0decce 100%);">
+            <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">Life Insurances</p>
+            <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{Insurances.lifeInsurance}}</p>
+        </div>
+
+    </div><!--Inside Sub MAinCard-->
+
+    </div><!--Inside Col-5-->  
+          
+
+
+             <!-- 4rth -->
+             <div class="col-md-4 col-12"><!--Inside Col-4-->
+                <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px;padding: 20px;"><!-- Custom card style -->
+            
+                    <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #d42127 0%, #ec0d0d 100%);">
+                        <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">General Insurances</p>
+                        <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{Insurances.generalInsurance}}</p>
+                    </div>
+            
+                </div><!--Inside Sub MAinCard-->
+            
+                </div><!--Inside Col-5-->  
+           
+
+
+            <!-- 5th -->
+            
+               <div class="col-md-4 col-12"><!--Inside Col-4-->
+                <div class="card card-custom shadow-lg border-0" style="border-radius: 15px; overflow: hidden; background-color: #f7f7f7; height: 100px;padding: 20px; "><!-- Custom card style -->
+            
+                    <div class="card-body d-flex justify-content-center align-items-center flex-column text-dark" style="padding: 1rem; background: linear-gradient(135deg, #1f0102 0%, #1f0102 100%);">
+                        <p class="title fw-bold" style="font-size: 1.0rem; color: #fff;">Health Insurances</p>
+                        <p class="fw-bold" style="font-size: 1.5rem; color: #fff;">{{Insurances.healthInsurance}}</p>
+                    </div>
+            
+                </div><!--Inside Sub MAinCard-->
+            
+                </div><!--Inside Col-5-->  
+            
+          
+            <!-- 5th -->
+
+
+
+
+        </div>
+    </div>
+    </div>
+</div>
+
+</body>
+</html>
+

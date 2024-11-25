@@ -1,0 +1,184 @@
+{% extends 'DsaDashboard.html' %} {% block content1 %}
+
+<style>
+    .profile-container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .profile-header {
+      font-size: 2rem;
+      color: #343a40;
+      margin-bottom: 20px;
+    }
+  
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  
+    .form-control[readonly] {
+      background-color: #e9ecef;
+    }
+  
+    .btn-primary,
+    .btn-success {
+      width: 100%;
+      padding: 10px;
+      font-size: 1.1rem;
+    }
+  </style>
+  
+  <div class="container profile-container">
+    <p class="display-5 text-center fw-bolder profile-header">My Profile</p>
+    <form action="" method="post" class="profileForm">
+  
+      {% for item in data %}
+  
+      <div class="mb-3">
+        <label for="dsa_registerid" class="form-label">SALE Id:</label>
+        <input
+          type="text"
+          name="dsa_registerid"
+          id="dsa_registerid"
+          value="{{ item.registerid }}"
+          class="form-control"
+          readonly
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="franchid" class="form-label">Franchise Id:</label>
+        <input
+          type="text"
+          name="franchid"
+          id="franchid"
+          value="{{ item.franchiseCode }}"
+          class="form-control"
+          readonly
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="dsa_name" class="form-label">SALE Person Name:</label>
+        <input
+          type="text"
+          name="dsa_name"
+          id="dsa_name"
+          value="{{ item.name }}"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value="{{ item.email }}"
+          class="form-control"
+          aria-describedby="validationServer03Feedback"
+          required
+        />
+        <div id="validationServer03Feedback" class="invalid-feedback">
+          Please provide a valid Email.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="mobilenumber" class="form-label">Mobile Number:</label>
+        <input
+          type="text"
+          name="mobilenumber"
+          id="mobilenumber"
+          value="{{ item.phone }}"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="pan" class="form-label">PAN Number:</label>
+        <input
+          type="text"
+          name="pan"
+          id="pan"
+          value="{{ item.pan }}"
+          class="form-control"
+          readonly
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="aadhar" class="form-label">Aadhar Number:</label>
+        <input
+          type="text"
+          name="aadhar"
+          id="aadhar"
+          value="{{ item.aadhar }}"
+          class="form-control"
+          readonly
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="profession" class="form-label">Qualification:</label>
+        <input
+          type="text"
+          name="profession"
+          id="profession"
+          value="{{ item.qualification }}"
+          class="form-control"
+          required
+          pattern="[a-zA-Z]+"
+        />
+      </div>
+  
+      {% if edited %}
+      <button type="submit" class="btn btn-success mt-3">Edited</button>
+      {% else %}
+      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+      {% endif %}
+  
+      {% endfor %}
+  
+    </form>
+  </div>
+  
+<script>
+  $(".profileForm").on("submit", () => {
+    const regexCheck = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{3,}$/;
+
+    const email = $("#email").val();
+
+    if (!regexCheck.test(email)) {
+      document.getElementById("email").classList.add("is-invalid");
+      return false;
+    } else {
+      document.getElementById("email").classList.remove("is-invalid");
+    }
+  });
+
+  $("#mobilenumber").on("input", (e) => {
+    let { value } = e.target;
+    const maxLength = 10;
+    const regexCheck = /[^0-9]/g;
+
+    value = value.replace(regexCheck, "");
+
+    if (value.length > maxLength) {
+      value = value.slice(0, maxLength);
+    }
+
+    e.target.value = value;
+  });
+</script>
+
+{% endblock %}
